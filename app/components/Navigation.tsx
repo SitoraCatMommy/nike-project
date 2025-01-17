@@ -34,7 +34,7 @@ export default function Navigation() {
 
             <div className='flex gap-2 text-lg leading-normal font-medium font-sans max-lg:hidden wide:mr-24'>
                 <Link href={"/"}>Sign in</Link>
-                <span></span>
+                <span>/</span>
                 <Link href={"/"}>Explore now</Link>
             </div>
 
