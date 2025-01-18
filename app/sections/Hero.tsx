@@ -1,38 +1,80 @@
-import React from 'react'
-import Button from '../components/Button'
+/* eslint-disable @next/next/no-img-element */
+"use client"
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState } from "react";
+import { shoes, stat } from "../constants/Index";
+import type { shoesProps, statProps } from "../constants/Index";
+import  Button  from "@/app/components/Button";
+import ShoeCard from "@/app/components/ShoeCard";
+import { arrowRight } from '@/public/assets/icons';
+import { bigShoe1 } from '@/public/assets/images';
+import Image from 'next/image';
 
-export default function Hero() {
+const Hero: React.FC = () => {
+  const [bigShoeImg, setBigShoeImg] = useState<any>(bigShoe1);
+
   return (
-    <section className='w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container' id='home'>
+    <section
+      id='home'
+      className='w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container'
+    >
+      <div className='relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28'>
+        <p className='text-xl font-montserrat text-coral-red'>
+          Our Fall collections
+        </p>
 
-        <div className='relative-xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28'>
+        <h1 className='mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold'>
+          <span className='xl:bg-white xl:whitespace-nowrap relative z-10 pr-10'>
+            The New Arrival
+          </span>
+          <br />
+          <span className='text-coral-red inline-block mt-3'>Nike</span> Shoes
+        </h1>
+        <p className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm'>
+          Quality comfort, original import from China
+        </p>
 
-            <p className='text-xl font-sans text-red-500'>
-                Our fall collection
-            </p>
+        <Button label='Shop now' iconURL={arrowRight} />
 
-            <h1 className='mt-10 font-sans text-8xl max-sm:text-7xl max-sm:leading-tight font-bold'>
-
-                <span className='xl:bg-white xl:whitespace-nowrap relative z-10 pr-10'>
-                    New arrival
-                </span> 
-                <br/>
-                <span className='text-red-500 inline-block mt-3'>
-                    Nike
-                </span>
-                Shoes
-
-            </h1>
-
-            <p className='font-sans text-gray-400 text-lg leading-8 mt-6 mb-14 sm:max-w-sm'>
-                Quality, comfort, import, original China
-            </p>
-
-            <Button label='Shop now' iconURL='./assets/icons/arrow-right.svg'/>
-
+        <div className='flex justify-start items-start flex-wrap w-full mt-20 gap-16'>
+          {stat.map((item: statProps, index: number) => (
+            <div key={index}>
+              <p className='text-4xl font-palanquin font-bold'>{item.value}</p>
+              <p className='leading-7 font-montserrat text-slate-gray'>
+                {item.label}
+              </p>
+            </div>
+          ))}
         </div>
+      </div>
 
-    </section> 
-  )
-}
+      <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center'>
+  <div className='relative z-10'>
+    <Image
+      src={bigShoeImg}
+      alt='shoe collection'
+      width={610}
+      height={502}
+      priority
+      className='object-contain'
+    />
+  </div>
+
+  <div className='flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6'>
+    {shoes.map((shoe: shoesProps, index: number) => (
+      <div key={index}>
+        <ShoeCard
+          imgURL={shoe}
+          changeBigShoeImage={(img: string) => setBigShoeImg(img)}
+          bigShoeImg={bigShoeImg}
+        />
+      </div>
+    ))}
+  </div>
+</div>
+    </section>
+  );
+};
+
+export default Hero;
