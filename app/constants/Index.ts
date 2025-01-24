@@ -4,7 +4,11 @@ import {
     bigShoe3,
     thumbnailShoe1,
     thumbnailShoe2,
-    thumbnailShoe3
+    thumbnailShoe3,
+    shoe4,
+    shoe5,
+    shoe6,
+    shoe7
 } from '@/public/assets/images';
 
 
@@ -23,6 +27,12 @@ interface shoesProps {
     small: string;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     big: any;
+}
+
+interface popularProductProps {
+    imgURL: string,
+        name: string,
+        price: string,
 }
 
 export const navLinks: navLinksProps[] = [
@@ -44,4 +54,27 @@ export const shoes: shoesProps[] = [
     {small: thumbnailShoe3, big: bigShoe3},
 ];
 
-export type { navLinksProps, statProps, shoesProps };
+export const popularProducts: popularProductProps[] = [
+    {
+        imgURL: shoe4,
+        name: "Nike Air Jordan-01",
+        price: "$200.20",
+    },
+    {
+        imgURL: shoe5,
+        name: "Nike Air Jordan-10",
+        price: "$210.20",
+    },
+    {
+        imgURL: shoe6,
+        name: "Nike Air Jordan-100",
+        price: "$220.20",
+    },
+    {
+        imgURL: shoe7,
+        name: "Nike Air Jordan-001",
+        price: "$230.20",
+    },
+];
+
+export type { navLinksProps, statProps, shoesProps, popularProductProps };
