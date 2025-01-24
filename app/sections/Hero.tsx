@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
       className='w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container'
     >
       <div className='relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28'>
-        <p className='text-xl font-montserrat text-coral-red'>
+        <p className='text-xl font-montserrat text-red-700'>
           Our Fall collections
         </p>
 
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
             The New Arrival
           </span>
           <br />
-          <span className='text-coral-red inline-block mt-3'>Nike</span> Shoes
+          <span className='text-red-700 inline-block mt-3'>Nike</span> Shoes
         </h1>
         <p className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm'>
           Quality comfort, original import from China
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center'>
+      <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-white bg-hero bg-cover bg-center'>
   <div className='relative z-10'>
     <Image
       src={bigShoeImg}

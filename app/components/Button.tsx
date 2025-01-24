@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
     ${
         backgroundColor
         ? `${backgroundColor} ${textColour} ${borderColour}`
-        : "bg-red-500 text-white border-red-800"
+        : "bg-red-700 text-white border-red-800"
     } rounded-full ${fullWidth ? "w-full" : ""}`}
     >
         {label}

@@ -8,7 +8,7 @@ interface ShoeCardProps {
   bigShoeImg: string;
 }
 
-const ShoeCard: React.FC<ShoeCardProps> = ({ imgURL, changeBigShoeImage, bigShoeImg }) => {
+const ShoeCard: React.FC<ShoeCardProps> = ({ imgURL, changeBigShoeImage, bigShoeImg }) => { 
   const handleClick = (): void => {
     if (bigShoeImg !== imgURL.big) {
       changeBigShoeImage(imgURL.big);
@@ -19,7 +19,7 @@ const ShoeCard: React.FC<ShoeCardProps> = ({ imgURL, changeBigShoeImage, bigShoe
     <div
       className={`border-2 rounded-xl ${
         bigShoeImg === imgURL.big
-          ? "border-coral-red"
+          ? "border-gray-300"
           : "border-transparent"
       } cursor-pointer max-sm:flex-1`}
       onClick={handleClick}
